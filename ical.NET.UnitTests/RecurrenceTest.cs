@@ -1875,7 +1875,7 @@ namespace ical.NET.UnitTests
             var tz = iCal.Create<VTimeZone>();
 
             tz.TzId = "US-Eastern";
-
+            //ToDo: Delegate this to NodaTime
             ITimeZoneInfo standard = new CalTimeZoneInfo(Components.Standard);
             standard.Start = new CalDateTime(new DateTime(1967, 10, 29, 2, 0, 0, DateTimeKind.Utc));
             standard.RecurrenceRules.Add(new RecurrencePattern("FREQ=YEARLY;BYDAY=-1SU;BYMONTH=10"));

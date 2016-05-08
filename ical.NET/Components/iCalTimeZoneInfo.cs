@@ -113,30 +113,30 @@ namespace Ical.Net
             set { Properties.Set("RECURRENCE-ID", value); }
         }
 
-        public virtual void ClearEvaluation()
-        {
-            RecurrenceUtil.ClearEvaluation(this);
-        }
+        //public virtual void ClearEvaluation()
+        //{
+        //    RecurrenceUtil.ClearEvaluation(this);
+        //}
 
-        public virtual HashSet<Occurrence> GetOccurrences(IDateTime dt)
-        {
-            return RecurrenceUtil.GetOccurrences(this, dt, true);
-        }
+        //public virtual HashSet<Occurrence> GetOccurrences(IDateTime dt)
+        //{
+        //    return RecurrenceUtil.GetOccurrences(this, dt, true);
+        //}
 
-        public virtual HashSet<Occurrence> GetOccurrences(DateTime dt)
-        {
-            return RecurrenceUtil.GetOccurrences(this, new CalDateTime(dt), true);
-        }
+        //public virtual HashSet<Occurrence> GetOccurrences(DateTime dt)
+        //{
+        //    return RecurrenceUtil.GetOccurrences(this, new CalDateTime(dt), true);
+        //}
 
-        public virtual HashSet<Occurrence> GetOccurrences(IDateTime startTime, IDateTime endTime)
-        {
-            return RecurrenceUtil.GetOccurrences(this, startTime, endTime, true);
-        }
+        //public virtual HashSet<Occurrence> GetOccurrences(IDateTime startTime, IDateTime endTime)
+        //{
+        //    return RecurrenceUtil.GetOccurrences(this, startTime, endTime, true);
+        //}
 
-        public virtual HashSet<Occurrence> GetOccurrences(DateTime startTime, DateTime endTime)
-        {
-            return RecurrenceUtil.GetOccurrences(this, new CalDateTime(startTime), new CalDateTime(endTime), true);
-        }
+        //public virtual HashSet<Occurrence> GetOccurrences(DateTime startTime, DateTime endTime)
+        //{
+        //    return RecurrenceUtil.GetOccurrences(this, new CalDateTime(startTime), new CalDateTime(endTime), true);
+        //}
 
         protected override void OnDeserializing(StreamingContext context)
         {

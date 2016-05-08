@@ -54,7 +54,7 @@ namespace Ical.Net
                 }
             }
 
-            tzi.RecurrenceRules.Add(recurrence);
+            //tzi.RecurrenceRules.Add(recurrence);
         }
 
         public static VTimeZone FromSystemTimeZone(TimeZoneInfo tzinfo)

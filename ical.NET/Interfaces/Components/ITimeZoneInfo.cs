@@ -3,7 +3,7 @@ using Ical.Net.Interfaces.Evaluation;
 
 namespace Ical.Net.Interfaces.Components
 {
-    public interface ITimeZoneInfo : ICalendarComponent, IRecurrable
+    public interface ITimeZoneInfo : ICalendarComponent//, IRecurrable
     {
         string TzId { get; }
         IUtcOffset OffsetFrom { get; }
