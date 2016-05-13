@@ -49,12 +49,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Event.cs" />
+    <Compile Include="FieldNormalization.cs" />
     <Compile Include="Frequency.cs" />
     <Compile Include="RecurrenceBuilder.cs" />
     <Compile Include="RecurrenceCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecurrenceRule.cs" />
     <Compile Include="NodaUtilities.cs" />
+    <Compile Include="Visibility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
