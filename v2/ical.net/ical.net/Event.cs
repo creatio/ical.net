@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Linq;
 using NodaTime;
 
@@ -11,7 +10,7 @@ namespace ical.net
     /// </summary>
     public class Event
     {
-        public string Uid { get; private set; }
+        public string Uuid { get; private set; }
         public ZonedDateTime DtStamp { get; private set; }
         /// <summary>
         /// Inclusive start of the event. In the event that this represents a date without a time, AND no DtEnd property, the event's non-
@@ -32,69 +31,90 @@ namespace ical.net
         /// A short description of the event's classification, most often used to describe visibility. Corresponds to the CLASS property.
         /// </summary>
         public string Classification { get; private set; }
-        public ISet<string> Categories { get; private set; } 
+        public ISet<string> Categories { get; private set; }
+        public RecurrenceRule Rrule { get; private set; }
+        public bool IsRecurring => Rrule != null;
 
-        private Event(string uid, ZonedDateTime dtStamp, ZonedDateTime dtStart, string summary, string classification = Visibility.Public, IEnumerable<string> categories = null)
+        private Event(string uuid, ZonedDateTime start, ZonedDateTime createdAt, string summary, string classification, IEnumerable<string> categories)
         {
-            if (dtStart.TimeOfDay != LocalTime.Midnight)
+            if (start.TimeOfDay != LocalTime.Midnight)
             {
                 throw new ArgumentException("An event without a DtEnd property must not use times");
             }
 
-            Uid = uid;
-            DtStamp = dtStamp;
-            DtStart = dtStart;
+            Uuid = FieldNormalization.NormalizeOrCreateUuid(uuid);
+
+            DtStamp = createdAt == default(ZonedDateTime)
+                ? NodaUtilities.NowTimeWithSystemTimeZone()
+                : createdAt;
+
+            DtStart = start;
             var oneTickBeforeMidnight = Duration.FromStandardDays(1).Minus(Duration.FromTicks(1));
-            DtEnd = ZonedDateTime.Add(dtStart, oneTickBeforeMidnight);
+            DtEnd = ZonedDateTime.Add(start, oneTickBeforeMidnight);
             Summary = FieldNormalization.NormalizeSummary(summary);
-            Classification = classification;
+            Classification = FieldNormalization.NormalizeClassification(classification);
             Categories = FieldNormalization.NormalizeCategories(categories);
         }
 
-        public static Event GetSingleDayEvent(string uid, ZonedDateTime dtStamp, ZonedDateTime dtStart, string summary, string classification = Visibility.Public)
+        public static Event GetSingleDayEvent(string uuid, ZonedDateTime start, ZonedDateTime createdAt, string summary, string classification = "",
+            IEnumerable<string> categories = null)
         {
-            return new Event(uid, dtStamp, dtStart, summary, classification);
+            return new Event(uuid, start, createdAt, summary, classification, categories);
         }
 
-        public static Event GetSingleDayEvent(ZonedDateTime dtStamp, ZonedDateTime dtStart, string summary, string classification = Visibility.Public)
+        public static Event GetSingleDayEvent(ZonedDateTime start, ZonedDateTime createdAt, string summary, string classification = "",
+            IEnumerable<string> categories = null)
         {
-            return GetSingleDayEvent(Guid.NewGuid().ToString(), dtStamp, dtStart, summary, classification);
+            return GetSingleDayEvent(string.Empty, start, createdAt, summary, classification, categories);
         }
 
-        public static Event GetSingleDayEvent(ZonedDateTime dtStart, string summary, string classification = Visibility.Public)
+        private Event(string uuid, ZonedDateTime start, ZonedDateTime end, ZonedDateTime createdAt, string summary = "", string classification = "",
+            IEnumerable<string> categories = null)
         {
-            return GetSingleDayEvent(NodaUtilities.NowTimeWithSystemTimeZone(), dtStart);
-        }
-
-        private Event(string uid, ZonedDateTime dtStamp, ZonedDateTime dtStart, ZonedDateTime dtEnd, string summary, string classification = Visibility.Public, IEnumerable<string> categories)
-        {
-            if (dtEnd <= dtStart)
+            if (end <= start)
             {
-                throw new ArgumentException($"Event start ({dtStart}) must come before event end ({dtEnd})");
+                throw new ArgumentException($"Event start ({start}) must come before event end ({end})");
             }
 
-            Uid = uid;
-            DtStamp = dtStamp;
-            DtStart = dtStart;
-            DtEnd = dtEnd;
+            Uuid = FieldNormalization.NormalizeOrCreateUuid(uuid);
+
+            DtStamp = createdAt == default(ZonedDateTime)
+                ? NodaUtilities.NowTimeWithSystemTimeZone()
+                : createdAt;
+
+            DtStart = start;
+            DtEnd = end;
             Summary = FieldNormalization.NormalizeSummary(summary);
-            Classification = classification;
+            Classification = FieldNormalization.NormalizeClassification(classification);
             Categories = FieldNormalization.NormalizeCategories(categories);
         }
 
-        public static Event GetEvent(string uid, ZonedDateTime dtStamp, ZonedDateTime dtStart, ZonedDateTime dtEnd, string summary, string visibility = Visibility.Public)
+        public static Event CreateEvent(string uuid, ZonedDateTime start, ZonedDateTime end, ZonedDateTime createdAt = default(ZonedDateTime), string summary = "",
+            string classification = "", IEnumerable<string> categories = null)
         {
-            return new Event(uid, dtStamp, dtStart, dtEnd, summary, visibility);
+            return new Event(uuid, start, end, createdAt, summary, classification, categories);
         }
 
-        public static Event GetEvent(ZonedDateTime dtStamp, ZonedDateTime dtStart, ZonedDateTime dtEnd, string summary, string visibility = Visibility.Public)
+        public static Event CreateEvent(ZonedDateTime start, ZonedDateTime end, ZonedDateTime createdAt = default(ZonedDateTime), string summary = "", string classification = "",
+            IEnumerable<string> categories = null)
         {
-            return GetEvent(Guid.NewGuid().ToString(), dtStamp, dtStart, dtEnd, summary, visibility);
+            return CreateEvent(string.Empty, start, end, createdAt, summary, classification, categories);
         }
 
-        public static Event GetEvent(ZonedDateTime dtStart, ZonedDateTime dtEnd, string summary, string visibility = Visibility.Public)
+        public IEnumerable<RecurrenceIncidence> GetRecurrences()
         {
-            return GetEvent(NodaUtilities.NowTimeWithSystemTimeZone(), dtStart, dtEnd, summary, visibility);
+            if (!IsRecurring)
+            {
+                return Enumerable.Empty<RecurrenceIncidence>();
+            }
+            //return recurrenceCalculator.Something?
+
+            throw new NotImplementedException();
+        }
+
+        public bool EventRecursInRange(ZonedDateTime start, ZonedDateTime end)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using NodaTime;
@@ -19,16 +20,14 @@ namespace ical.net
 
         public RecurrenceCalculator(ZonedDateTime startTime, RecurrenceRule repetitionRepetitionRules) : this(startTime, repetitionRepetitionRules, null) {}
 
-        public ISet<ZonedDateTime> GetRecurrences()
+        /// <summary>
+        /// Returns an ordered collection of recurrence incidents, from soonest in time to latest in time. (Note: this method is lazy; you may with to memoize
+        /// the values it returns instead of continually re-computing them.)
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<RecurrenceIncidence> GetRecurrences()
         {
-            var temp = _startTime;
-            var recurrences = new HashSet<ZonedDateTime> {temp};
-            for (var i = recurrences.Count; i < _repetitionRules.Count; i++)
-            {
-                temp = temp.Plus(_repetitionRules.RecurEvery);
-                recurrences.Add(temp);
-            }
-            return recurrences.OrderBy(r => r, ZonedDateTime.Comparer.Instant).ToImmutableSortedSet();
+            throw new NotImplementedException();
         }
     }
 }

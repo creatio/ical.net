@@ -3,7 +3,12 @@ using NodaTime;
 
 namespace ical.net
 {
-    internal class RecurrenceRule
+    /// <summary>
+    /// This class represents the data associated with a recurrence rule (RRULE). All recurrence rules are defined by a frequency (FREQ), and
+    /// bounded by either an ending UTC datetime (UNTIL) or a number of occurences (COUNT). COUNT and UNTIL are mutually exclusive; they may
+    /// not co-exist within the same recurrence rule.
+    /// </summary>
+    public class RecurrenceRule
     {
         #region Test cases
         //Expressible notions:
@@ -322,8 +327,9 @@ namespace ical.net
         //  RRULE:FREQ=WEEKLY;INTERVAL=2;COUNT=4;BYDAY=TU,SU;WKST=SU
         //  ==> (1997 EDT)August 5,17,19,31
         #endregion
-        
-        public ZonedDateTime RecurUntil { get; private set; }
+
+        public ZonedDateTime RecurUntilUtc { get; private set; }
+        public ZonedDateTime RecurUntilLocal { get; private set; }
         public int RecurrenceLimit { get; private set; }
         public int Count { get; private set; }
         public Duration RecurEvery { get; private set; }
@@ -349,6 +355,30 @@ namespace ical.net
         //Frequency: secondly, minutely, hourly, daily, weekly 
 
         //RepeatBySecondOfMinute (0-59) (BYSECOND)
+        /// <param name="recurUntil">May be specified as a local time or a UTC time</param>
+        public static RecurrenceRule RecurBySecondOfMinute(int second, ZonedDateTime recurUntil)
+        {
+            CheckSeconds(second);
+
+            throw new NotImplementedException();
+        }
+
+        //RepeatBySecondOfMinute (0-59) (BYSECOND)
+        public static RecurrenceRule RecurBySecondOfMinute(int second, int count)
+        {
+            CheckSeconds(second);
+            throw new NotImplementedException();
+        }
+
+        private static void CheckSeconds(int seconds)
+        {
+            if (seconds <= 0 || seconds >= 60)
+            {
+                throw new ArgumentException($"Number of seconds must be a value between 0 and 59.");
+            }
+        }
+
+
         //RepeatByMinuteOfHour (0-59) (BYMINUTE)
         //RepeatByHourOfDay (0-23) (BYHOUR)
         //RepeatByDayOfWeek (SU|MO|TU|WE|TH|FR|SA) (BYDAY) (Must specify a WKST when combined with a weekly RRULE)
