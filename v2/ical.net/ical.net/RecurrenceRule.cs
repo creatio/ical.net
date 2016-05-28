@@ -5,8 +5,8 @@ namespace ical.net
 {
     /// <summary>
     /// This class represents the data associated with a recurrence rule (RRULE). All recurrence rules are defined by a frequency (FREQ), and
-    /// bounded by either an ending UTC datetime (UNTIL) or a number of occurences (COUNT). COUNT and UNTIL are mutually exclusive; they may
-    /// not co-exist within the same recurrence rule.
+    /// bounded by either an inclusive, ending UTC datetime (UNTIL) or a number of occurences (COUNT). COUNT and UNTIL are mutually exclusive;
+    /// they may not co-exist within the same recurrence rule.
     /// </summary>
     public class RecurrenceRule
     {
@@ -330,47 +330,67 @@ namespace ical.net
 
         public ZonedDateTime RecurUntilUtc { get; private set; }
         public ZonedDateTime RecurUntilLocal { get; private set; }
-        public int RecurrenceLimit { get; private set; }
-        public int Count { get; private set; }
-        public Duration RecurEvery { get; private set; }
+        public long Count { get; private set; }
+        public int Interval { get; private set; }
 
-        public RecurrenceRule(int count, Duration recurEvery)
+        public RecurrenceRule(Frequency frequency, int interval, long count)
         {
-            if (count <= 0)
-            {
-                throw new ArgumentException("Recurrence count must be greater than or equal to 1");
-            }
-
-            if (recurEvery <= Duration.Zero)
-            {
-                throw new ArgumentException("Recurrence interval must be greater than 0");
-            }
+            FrequencyUtil.CheckFrequency(frequency);
+            CheckInterval(interval);
+            CheckCount(count);
 
             Count = count;
-            RecurEvery = recurEvery;
+            Interval = interval;
+            RecurUntilUtc = NodaUtilities.GetDefaultZonedDateTime;
+            RecurUntilLocal = NodaUtilities.GetDefaultZonedDateTime;
         }
 
-        public RecurrenceRule(int count, TimeSpan interval) : this(count, Duration.FromTimeSpan(interval)) {}
+        public RecurrenceRule(Frequency frequency, int interval, ZonedDateTime until)
+        {
+            FrequencyUtil.CheckFrequency(frequency);
+            CheckInterval(interval);
+            Interval = interval;
 
-        //Frequency: secondly, minutely, hourly, daily, weekly 
+            RecurUntilLocal = until;
+            RecurUntilUtc = until.WithZone(DateTimeZone.Utc);
+            Count = long.MinValue;
+        }
+
+        //BYMONTHDAY
 
         //RepeatBySecondOfMinute (0-59) (BYSECOND)
         /// <param name="recurUntil">May be specified as a local time or a UTC time</param>
         public static RecurrenceRule RecurBySecondOfMinute(int second, ZonedDateTime recurUntil)
         {
-            CheckSeconds(second);
-
+            CheckSecondOfMinute(second);
+            //return new RecurrenceRule(Duration.From);
             throw new NotImplementedException();
         }
 
         //RepeatBySecondOfMinute (0-59) (BYSECOND)
-        public static RecurrenceRule RecurBySecondOfMinute(int second, int count)
+        public static RecurrenceRule RecurBySecondOfMinute(int second, long count)
         {
-            CheckSeconds(second);
-            throw new NotImplementedException();
+            CheckSecondOfMinute(second);
+            return new RecurrenceRule(Duration.FromSeconds(second), count);
         }
 
-        private static void CheckSeconds(int seconds)
+        private static void CheckInterval(int interval)
+        {
+            if (interval < 1)
+            {
+                throw new ArgumentException("Interval must be a positive integer greater than 0.");
+            }
+        }
+
+        private static void CheckCount(long count)
+        {
+            if (count < 1)
+            {
+                throw new ArgumentException($"COUNT must be a positive integer greater than 0.");
+            }
+        }
+
+        private static void CheckSecondOfMinute(int seconds)
         {
             if (seconds <= 0 || seconds >= 60)
             {
@@ -378,6 +398,37 @@ namespace ical.net
             }
         }
 
+        private static void CheckHourOfDay(int hours)
+        {
+            if (hours <= 0 || hours >= 23)
+            {
+                throw new ArgumentException($"Number of hours must be a value between 0 and 23.");
+            }
+        }
+
+        private static void CheckDayOfMonth(int monthDay)
+        {
+            if (monthDay < -31 || monthDay > 31)
+            {
+                throw new ArgumentException($"Day of the month must be 1 to 31 (counting forwards) or -1 to -31 (counting backwards).");
+            }
+        }
+
+        private static void CheckDayOfYear(int yearDay)
+        {
+            if (yearDay < -366 || yearDay > 366)
+            {
+                throw new ArgumentException($"Day of the year must be 1 to 366 (counting forward) or -1 to -366 (counting backwards).");
+            }
+        }
+
+        private static void CheckWeekOfYear(int weekOfYear)
+        {
+            if (weekOfYear > 53 || weekOfYear < -53)
+            {
+                throw new ArgumentException($"Week of the year must be 1 to 53 (counting forward) or -1 to -53 (counting backwards).");
+            }
+        }
 
         //RepeatByMinuteOfHour (0-59) (BYMINUTE)
         //RepeatByHourOfDay (0-23) (BYHOUR)

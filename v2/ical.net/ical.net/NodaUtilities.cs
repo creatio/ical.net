@@ -65,5 +65,7 @@ namespace ical.net
             var zoned = instant.InZone(timeZone);
             return zoned;
         }
+
+        public static ZonedDateTime GetDefaultZonedDateTime => ZonedDateTime.FromDateTimeOffset(DateTimeOffset.MinValue);
     }
 }
