@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Text;
 using Ical.Net;
 using Ical.Net.DataTypes;
@@ -89,34 +88,6 @@ namespace ical.NET.UnitTests
 
             while (enum1.MoveNext() && enum2.MoveNext())
                 Assert.AreEqual(enum1.Current, enum2.Current, value + " do not match");
-        }
-
-        /// <summary>
-        /// At times, this may throw a WebException if an internet connection is not present.
-        /// This is safely ignored.
-        /// </summary>
-        [Test, ExpectedException(typeof(WebException))]
-        public void Attachment4()
-        {
-            var iCal = Calendar.LoadFromFile(@"Calendars\Serialization\Attachment4.ics")[0];
-            ProgramTest.TestCal(iCal);
-
-            var evt = iCal.Events["uuid1153170430406"];
-            Assert.IsNotNull(evt, "Event could not be accessed by UID");
-
-            var a = evt.Attachments[0];
-            a.LoadDataFromUri();
-            Assert.IsNotNull(a.Data);
-            Assert.AreNotEqual(0, a.Data.Length);
-
-            var ms = new MemoryStream();
-            ms.SetLength(a.Data.Length);
-            a.Data.CopyTo(ms.GetBuffer(), 0);
-
-            var iCal1 = Calendar.LoadFromStream(ms)[0];
-            Assert.IsNotNull(iCal1, "Attached iCalendar did not load correctly");
-
-            throw new WebException();
         }
 
         [Test, Category("Serialization")]
@@ -278,7 +249,7 @@ namespace ical.NET.UnitTests
             ProgramTest.TestCal(iCal);
             var evt = iCal.Events.First();
 
-            var items = new ArrayList();
+            var items = new List<string>();
             items.AddRange(new[]
             {
                 "One", "Two", "Three",
@@ -286,8 +257,7 @@ namespace ical.NET.UnitTests
                 "Seven", "A string of text with nothing less than a comma, semicolon; and a newline\n."
             });
 
-            var found = new Hashtable();
-
+            var found = new Dictionary<string, bool>();
             foreach (var s in evt.Categories.Where(s => items.Contains(s)))
             {
                 found[s] = true;
@@ -556,18 +526,6 @@ END:VCALENDAR
             // The "Created" date is out-of-bounds.  It should be coerced to the
             // closest representable date/time.
             Assert.AreEqual(DateTime.MinValue, evt.Created.Value);
-        }
-
-        [Test, Category("Serialization")]
-        public void Language3_1()
-        {
-            var calendarPath = Path.Combine(Environment.CurrentDirectory, "Calendars");
-            calendarPath = Path.Combine(calendarPath, "Serialization");
-
-            var russia1 = Calendar.LoadFromUri(new Uri("http://www.mozilla.org/projects/calendar/caldata/RussiaHolidays.ics"))[0];
-            var russia2 = Calendar.LoadFromFile(Path.Combine(calendarPath, "Language3.ics"))[0];
-
-            CompareCalendars(russia1, russia2);
         }
 
         [Test, Category("Serialization")]

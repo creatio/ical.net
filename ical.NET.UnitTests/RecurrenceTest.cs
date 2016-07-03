@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -25,7 +24,7 @@ namespace ical.NET.UnitTests
     {
         private string _tzid;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void InitAll()
         {
             _tzid = "US-Eastern";
@@ -2634,37 +2633,36 @@ namespace ical.NET.UnitTests
         public void UsHolidays()
         {
             var iCal = Calendar.LoadFromFile(@"Calendars\Serialization\USHolidays.ics")[0];
-
             Assert.IsNotNull(iCal, "iCalendar was not loaded.");
-            var items = new Hashtable
+            var items = new Dictionary<string, CalDateTime>
             {
-                ["Christmas"] = new CalDateTime(2006, 12, 25),
-                ["Thanksgiving"] = new CalDateTime(2006, 11, 23),
-                ["Veteran's Day"] = new CalDateTime(2006, 11, 11),
-                ["Halloween"] = new CalDateTime(2006, 10, 31),
-                ["Daylight Saving Time Ends"] = new CalDateTime(2006, 10, 29),
-                ["Columbus Day"] = new CalDateTime(2006, 10, 9),
-                ["Labor Day"] = new CalDateTime(2006, 9, 4),
-                ["Independence Day"] = new CalDateTime(2006, 7, 4),
-                ["Father's Day"] = new CalDateTime(2006, 6, 18),
-                ["Flag Day"] = new CalDateTime(2006, 6, 14),
-                ["John F. Kennedy's Birthday"] = new CalDateTime(2006, 5, 29),
-                ["Memorial Day"] = new CalDateTime(2006, 5, 29),
-                ["Mother's Day"] = new CalDateTime(2006, 5, 14),
-                ["Cinco de Mayo"] = new CalDateTime(2006, 5, 5),
-                ["Earth Day"] = new CalDateTime(2006, 4, 22),
-                ["Easter"] = new CalDateTime(2006, 4, 16),
-                ["Tax Day"] = new CalDateTime(2006, 4, 15),
-                ["Daylight Saving Time Begins"] = new CalDateTime(2006, 4, 2),
-                ["April Fool's Day"] = new CalDateTime(2006, 4, 1),
-                ["St. Patrick's Day"] = new CalDateTime(2006, 3, 17),
-                ["Washington's Birthday"] = new CalDateTime(2006, 2, 22),
-                ["President's Day"] = new CalDateTime(2006, 2, 20),
-                ["Valentine's Day"] = new CalDateTime(2006, 2, 14),
-                ["Lincoln's Birthday"] = new CalDateTime(2006, 2, 12),
-                ["Groundhog Day"] = new CalDateTime(2006, 2, 2),
-                ["Martin Luther King, Jr. Day"] = new CalDateTime(2006, 1, 16),
-                ["New Year's Day"] = new CalDateTime(2006, 1, 1)
+                { "Christmas", new CalDateTime(2006, 12, 25)},
+                {"Thanksgiving", new CalDateTime(2006, 11, 23)},
+                {"Veteran's Day", new CalDateTime(2006, 11, 11)},
+                {"Halloween", new CalDateTime(2006, 10, 31)},
+                {"Daylight Saving Time Ends", new CalDateTime(2006, 10, 29)},
+                {"Columbus Day", new CalDateTime(2006, 10, 9)},
+                {"Labor Day", new CalDateTime(2006, 9, 4)},
+                {"Independence Day", new CalDateTime(2006, 7, 4)},
+                {"Father's Day", new CalDateTime(2006, 6, 18)},
+                {"Flag Day", new CalDateTime(2006, 6, 14)},
+                {"John F. Kennedy's Birthday", new CalDateTime(2006, 5, 29)},
+                {"Memorial Day", new CalDateTime(2006, 5, 29)},
+                {"Mother's Day", new CalDateTime(2006, 5, 14)},
+                {"Cinco de Mayo", new CalDateTime(2006, 5, 5)},
+                {"Earth Day", new CalDateTime(2006, 4, 22)},
+                {"Easter", new CalDateTime(2006, 4, 16)},
+                {"Tax Day", new CalDateTime(2006, 4, 15)},
+                {"Daylight Saving Time Begins", new CalDateTime(2006, 4, 2)},
+                {"April Fool's Day", new CalDateTime(2006, 4, 1)},
+                {"St. Patrick's Day", new CalDateTime(2006, 3, 17)},
+                {"Washington's Birthday", new CalDateTime(2006, 2, 22)},
+                {"President's Day", new CalDateTime(2006, 2, 20)},
+                {"Valentine's Day", new CalDateTime(2006, 2, 14)},
+                {"Lincoln's Birthday", new CalDateTime(2006, 2, 12)},
+                {"Groundhog Day", new CalDateTime(2006, 2, 2)},
+                {"Martin Luther King, Jr. Day", new CalDateTime(2006, 1, 16)},
+                { "New Year's Day", new CalDateTime(2006, 1, 1)},
             };
 
             var occurrences = iCal.GetOccurrences(

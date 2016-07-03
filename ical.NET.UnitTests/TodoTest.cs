@@ -13,15 +13,15 @@ namespace ical.NET.UnitTests
     {
         private const string _tzid = "US-Eastern";
 
-        public void TestTodoActive(string calendar, ArrayList items, params int[] numPeriods)
+        public void TestTodoActive(string calendar, IList items, params int[] numPeriods)
         {
             var iCal = Calendar.LoadFromFile(@"Calendars\Todo\" + calendar)[0];
             ProgramTest.TestCal(iCal);
             var todo = iCal.Todos[0];
-            
+
             for (var i = 0; i < items.Count; i += 2)
             {
-                var dt = (CalDateTime)items[i];                
+                var dt = (CalDateTime)items[i];
                 dt.TzId = _tzid;
 
                 var tf = (bool)items[i + 1];
@@ -47,7 +47,7 @@ namespace ical.NET.UnitTests
             var iCal = Calendar.LoadFromFile(@"Calendars\Todo\" + calendar)[0];
             ProgramTest.TestCal(iCal);
             var todo = iCal.Todos[0];
-            
+
             for (var i = 0; i < items.Count; i += 2)
             {
                 var dt = (IDateTime)items[i];
@@ -262,7 +262,7 @@ namespace ical.NET.UnitTests
                 "TODO should have " + items.Count + " occurrences; it has " + occurrences.Count);
 
             for (var i = 0; i < items.Count; i++)
-                Assert.AreEqual(items[i], occurrences[i].Period.StartTime, "TODO should occur at " + items[i] + ", but does not.");            
+                Assert.AreEqual(items[i], occurrences[i].Period.StartTime, "TODO should occur at " + items[i] + ", but does not.");
         }
 
         [Test, Category("Todo")]
@@ -360,7 +360,7 @@ namespace ical.NET.UnitTests
                 true
             };
 
-            TestTodoActive("Todo9.ics", items, 3);            
+            TestTodoActive("Todo9.ics", items, 3);
         }
     }
 }
