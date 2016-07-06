@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ALARM1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\alarm\alarm1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ALARM2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\alarm\alarm2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ALARM3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\alarm\alarm3.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ALARM4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\alarm\alarm4.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ALARM5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\alarm\alarm5.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ALARM6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\alarm\alarm6.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ALARM7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\alarm\alarm7.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Attachment3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\attachment3.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Attachment4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\attachment4.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Attendee1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\attendee1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Attendee2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\attendee2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Bug1741093" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\bug1741093.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Bug2033495" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\bug2033495.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Bug2148092" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\bug2148092.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Bug2912657" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\bug2912657.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Bug2916581" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\bug2916581.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Bug2938007" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\bug2938007.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Bug2959692" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\bug2959692.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Bug2966236" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\bug2966236.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Bug3007244" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\bug3007244.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ByMonth1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\bymonth1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ByMonth2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\bymonth2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ByMonthDay1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\bymonthday1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Calendar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\calendar1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CalendarParameters2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\calendarparameters2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CaseInsensitive1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\caseinsensitive1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CaseInsensitive2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\caseinsensitive2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CaseInsensitive3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\caseinsensitive3.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CaseInsensitive4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\caseinsensitive4.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Categories1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\categories1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Daily1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\daily1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DailyByDay1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\dailybyday1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DailyByHourMinute1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\dailybyhourminute1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DailyCount1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\dailycount1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DailyCount2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\dailycount2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DailyInterval1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\dailyinterval1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DailyInterval2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\dailyinterval2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DailyUntil1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\dailyuntil1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DateTime1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\datetime1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DateTime2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\datetime2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Duration1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\duration1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Empty1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\empty1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="EmptyLines1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\emptylines1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="EmptyLines2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\emptylines2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="EmptyLines3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\emptylines3.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="EmptyLines4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\emptylines4.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Encoding1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\encoding1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Encoding2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\encoding2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Encoding3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\encoding3.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Event1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\event1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Event2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\event2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Event3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\event3.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Event4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\event4.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GeographicLocation1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\geographiclocation1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Google1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\google1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Hourly1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\hourly1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HourlyInterval1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\hourlyinterval1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HourlyInterval2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\hourlyinterval2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HourlyUntil1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\hourlyuntil1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="JOURNAL1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\journal\journal1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="JOURNAL2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\journal\journal2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Language1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\language1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Language2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\language2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Language3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\language3.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Language4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\language4.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Minutely1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\minutely1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MinutelyByHour1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\minutelybyhour1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MinutelyCount1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\minutelycount1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MinutelyCount2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\minutelycount2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MinutelyCount3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\minutelycount3.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MinutelyCount4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\minutelycount4.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MinutelyInterval1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\minutelyinterval1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Monthly1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\monthly1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MonthlyByDay1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\monthlybyday1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MonthlyByMonthDay1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\monthlybymonthday1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MonthlyByMonthDay2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\monthlybymonthday2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MonthlyBySetPos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\monthlybysetpos1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MonthlyBySetPos2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\monthlybysetpos2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MonthlyCountByDay1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\monthlycountbyday1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MonthlyCountByDay2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\monthlycountbyday2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MonthlyCountByDay3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\monthlycountbyday3.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MonthlyCountByMonthDay1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\monthlycountbymonthday1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MonthlyCountByMonthDay2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\monthlycountbymonthday2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MonthlyCountByMonthDay3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\monthlycountbymonthday3.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MonthlyInterval1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\monthlyinterval1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MonthlyUntilByDay1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\monthlyuntilbyday1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Outlook2007LineFolds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\outlook2007linefolds.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Parameter1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\parameter1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Parameter2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\parameter2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Parse1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\parse1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PARSE17" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\parse17.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ProdID1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\prodid1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ProdID2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\prodid2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Property1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\property1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RecurrenceDates1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\recurrencedates1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RequestStatus1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\requeststatus1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Secondly1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\secondly1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TimeZone1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\timezone1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TimeZone2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\timezone2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TimeZone3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\timezone3.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Todo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\todo1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Todo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\todo2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Todo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\todo3.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Todo4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\todo4.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Todo5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\todo5.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Todo6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\todo6.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Todo7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\todo7.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Todo8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\todo\todo8.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Todo9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\todo\todo9.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Transparency1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\transparency1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Transparency2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\transparency2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Trigger1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\trigger1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="USHolidays" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\usholidays.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WeeklyCount1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\weeklycount1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WeeklyCountWkst1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\weeklycountwkst1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WeeklyCountWkst2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\weeklycountwkst2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WeeklyCountWkst3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\weeklycountwkst3.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WeeklyCountWkst4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\weeklycountwkst4.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WeeklyInterval1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\weeklyinterval1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WeeklyUntil1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\weeklyuntil1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WeeklyUntilWkst1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\weeklyuntilwkst1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WeeklyUntilWkst2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\weeklyuntilwkst2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WeeklyWeekStartsLastYear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\weeklyweekstartslastyear.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WeeklyWkst1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\weeklywkst1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="XProperty1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\xproperty1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="XProperty2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\serialization\xproperty2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Yearly1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\yearly1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YearlyByDay1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\yearlybyday1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YearlyByMonth1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\yearlybymonth1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YearlyByMonth2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\yearlybymonth2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YearlyByMonth3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\yearlybymonth3.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YearlyByMonthDay1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\yearlybymonthday1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YearlyBySetPos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\yearlybysetpos1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YearlyByWeekNo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\yearlybyweekno1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YearlyByWeekNo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\yearlybyweekno2.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YearlyByWeekNo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\yearlybyweekno3.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YearlyByWeekNo4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\yearlybyweekno4.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YearlyByWeekNo5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\yearlybyweekno5.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YearlyComplex1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\yearlycomplex1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YearlyCountByMonth1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\yearlycountbymonth1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YearlyCountByYearDay1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\yearlycountbyyearday1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="YearlyInterval1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>calendars\recurrence\yearlyinterval1.ics;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

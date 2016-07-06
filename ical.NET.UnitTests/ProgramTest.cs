@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Text;
 using Ical.Net;
 using Ical.Net.DataTypes;
 using Ical.Net.Interfaces;
@@ -18,8 +19,7 @@ namespace ical.NET.UnitTests
         {
             // The following code loads and displays an iCalendar
             // with US Holidays for 2006.
-            //
-            var iCal = Calendar.LoadFromFile(@"Calendars\Serialization\USHolidays.ics")[0];
+            var iCal = Calendar.LoadFromStream(new StringReader(Encoding.UTF8.GetString(IcsFiles.USHolidays)))[0];
             Assert.IsNotNull(iCal, "iCalendar did not load.");
         }
 
@@ -34,16 +34,6 @@ namespace ical.NET.UnitTests
                 Assert.IsTrue(cal.Todos.Count == 1, "Calendar should contain 1 todo; however, the iCalendar loaded " + cal.Todos.Count + " todos");
         }
 
-        [Test]
-        public void LoadFromFile()
-        {
-            var path = @"Calendars\Serialization\Calendar1.ics";
-            Assert.IsTrue(File.Exists(path), "File '" + path + "' does not exist.");
-
-            var iCal = Calendar.LoadFromFile(path)[0];
-            Assert.AreEqual(14, iCal.Events.Count);
-        }
-
         /// <summary>
         /// The following test is an aggregate of MonthlyCountByMonthDay3() and MonthlyByDay1() in the
         /// <see cref="Recurrence"/> class.
@@ -51,8 +41,8 @@ namespace ical.NET.UnitTests
         [Test]
         public void Merge1()
         {
-            var iCal1 = Calendar.LoadFromFile(@"Calendars\Recurrence\MonthlyCountByMonthDay3.ics")[0];
-            var iCal2 = Calendar.LoadFromFile(@"Calendars\Recurrence\MonthlyByDay1.ics")[0];
+            var iCal1 = Calendar.LoadFromStream(new StringReader(Encoding.UTF8.GetString(IcsFiles.MonthlyCountByMonthDay3)))[0];
+            var iCal2 = Calendar.LoadFromStream(new StringReader(Encoding.UTF8.GetString(IcsFiles.MonthlyByDay1)))[0];
 
             // Change the UID of the 2nd event to make sure it's different
             iCal2.Events[iCal1.Events[0].Uid].Uid = "1234567890";

@@ -1,5 +1,7 @@
 using System;
+using System.IO;
 using System.Linq;
+using System.Text;
 using Ical.Net;
 using NUnit.Framework;
 
@@ -11,7 +13,7 @@ namespace ical.NET.UnitTests
         [Test, Category("Journal")]
         public void Journal1()
         {
-            var iCal = Calendar.LoadFromFile(@"Calendars\Journal\JOURNAL1.ics")[0];
+            var iCal = Calendar.LoadFromStream(new StringReader(Encoding.UTF8.GetString(IcsFiles.JOURNAL1)))[0];
             ProgramTest.TestCal(iCal);
             Assert.AreEqual(1, iCal.Journals.Count);
             var j = iCal.Journals[0];
@@ -25,7 +27,7 @@ namespace ical.NET.UnitTests
         [Test, Category("Journal")]
         public void Journal2()
         {
-            var iCal = Calendar.LoadFromFile(@"Calendars\Journal\JOURNAL2.ics")[0];
+            var iCal = Calendar.LoadFromStream(new StringReader(Encoding.UTF8.GetString(IcsFiles.JOURNAL2)))[0];
             ProgramTest.TestCal(iCal);
             Assert.AreEqual(1, iCal.Journals.Count);
             var j = iCal.Journals.First();

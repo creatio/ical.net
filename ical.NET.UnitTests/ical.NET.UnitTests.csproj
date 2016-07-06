@@ -73,6 +73,11 @@
     <Compile Include="FreeBusyTest.cs" />
     <Compile Include="EventTest.cs" />
     <Compile Include="CopyTest.cs" />
+    <Compile Include="IcsFiles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IcsFiles.resx</DependentUpon>
+    </Compile>
     <Compile Include="JournalTest.cs" />
     <Compile Include="ProgramTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,6 +88,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\antlr.runtime\antlr.runtime.csproj">
+      <Project>{cb7cc882-ed47-46c0-aaae-7a437f22f1c6}</Project>
+      <Name>antlr.runtime</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ical.NET.Collections\ical.NET.Collections\Ical.Net.Collections.csproj">
       <Project>{E04EFEB6-4625-4D58-AC91-7B8B8A2C97BB}</Project>
       <Name>Ical.Net.Collections</Name>
@@ -566,7 +575,12 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="IcsFiles.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>IcsFiles.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
